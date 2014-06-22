@@ -1,8 +1,19 @@
+<style>
+	input {display:block;}
+</style>
+<form method="post">
+	<input type="text" name="name" />
+	<input type="text" name="phone" />
+	<input type="text" name="email" />
+	<input type="submit" name="Send" />
+</form>
+
 <?php
 
-class TextHndler
+class TextHandler
 {
-	const nl = '<br/>';
+	const newline	= '<br/>';
+	const void	= 'не указано';
 	
 	public $text = '';
 	
@@ -18,19 +29,19 @@ class TextHndler
 	
 	public function build()
 	{
-		if(!is_array($this->input) || empty($this->input) && !is_array($this->fields) || empty($this->fields))
-			return false;
-			
 		foreach($this->input as $field => $value)
 		{
 			if(array_key_exists($field, $this->fields))
 			{
-				$this->text .= $this->fields[$field] . $value . self::nl;
+				$value = ($value !== '') ? $value : self::void;
+				$this->text .= $this->fields[$field] . $value . self::newline;
 			}
 		}
 		return $this->text;
 	}
 }
+
+if(empty($_POST)) exit;
 
 $fields = array
 (
