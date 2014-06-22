@@ -1,3 +1,13 @@
+<style>
+	input {display:block;}
+	input:before {content:"field"}
+</style>
+<form>
+	<input type="text" name="name" />
+	<input type="text" name="phone" />
+	<input type="text" name="email" />
+	<input type="submit" name="Отправить" />
+</form>
 <?php
 
 	$message = '';
