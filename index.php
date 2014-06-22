@@ -1,6 +1,6 @@
 <style>
 	input {display:block;}
-	input:before {content:"field"}
+	input:before {content:"field";}
 </style>
 <form method="post">
 	<input type="text" name="name" />
