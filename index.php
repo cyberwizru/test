@@ -2,7 +2,7 @@
 	input {display:block;}
 	input:before {content:"field"}
 </style>
-<form>
+<form method="post">
 	<input type="text" name="name" />
 	<input type="text" name="phone" />
 	<input type="text" name="email" />
@@ -25,7 +25,7 @@
 	{
 		if(array_key_exists($field, $fields))
 		{
-			$message .= $fields[$key] . $value . '<br/>';
+			$message .= $fields[$field] . $value . '<br/>';
 		}
 	}
 	
