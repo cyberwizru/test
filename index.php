@@ -20,13 +20,14 @@
 	);
 	
 	
-	
-	foreach($_POST as $field => $value)
+	if(!empty($_POST))
 	{
-		if(array_key_exists($field, $fields))
+		foreach($_POST as $field => $value)
 		{
-			$message .= $fields[$field] . $value . '<br/>';
+			if(array_key_exists($field, $fields))
+			{
+				$message .= $fields[$field] . $value . '<br/>';
+			}
 		}
 	}
-	
 	echo $message;
